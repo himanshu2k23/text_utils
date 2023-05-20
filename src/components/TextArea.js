@@ -24,7 +24,7 @@ export default function TextArea(props) {
         <>
             <h1>{props.heading}</h1>
             <div className="mb-3">
-                <textarea className="form-control" value={text} onChange={handleOnChange} id="floatingTextarea2" rows="8"></textarea>
+                <textarea className="form-control" style={{backgroundColor: props.theme==="dark" ? "#c5c8c9" : "white"}} value={text} onChange={handleOnChange} id="floatingTextarea2" rows="8"></textarea>
             </div>
             <div className="d-flex">
                 <button className="btn btn-primary mx-2" onClick={handleUppercaseClick}>Uppercase</button>
@@ -34,7 +34,7 @@ export default function TextArea(props) {
             <div className="container my-3">
                 <p>{countWords(text)} words and {text.length} characters</p>
                 <h3>Preview:</h3>
-                <p>{text}</p>
+                <p>{text? text : "Write something above to see the preview"}</p>
             </div>
         </>
     )
